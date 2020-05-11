@@ -14,7 +14,7 @@
 
 
 .container .table{
-   display: block !important;
+   
    overflow-x: auto !important;
    width: 100% !important;	
  }
@@ -169,10 +169,11 @@
 		</font>
 		</p>
 	</div>
+	
 		<div class= "table">
 			<h3 class="text-danger"><font size="5"><strong>Menu</strong></font></h3>
 			<br>
-				<table class="table">
+				<table align="center" class="table table-striped" >
 					<thead>
 						<th><h3>Item Name</h3></th>
 						<th><h3>Category</h3></th>
@@ -220,12 +221,14 @@
 					{% endfor %}
 				</tr>
 				</table>
+				<div class="button">
+			
+					<input type="button" class="btn btn-success btn-lg pull-right" onclick="storearray();" value="Checkout"/>
+			
+				</div>
 				
 		</div>
-		<div class="button">
-			<input type="button" class="btn btn-success btn-lg pull-right" onclick="storearray();" value="Checkout"/>
-	
-		</div>
+		
 	</div>
 	
 	

@@ -1,7 +1,21 @@
 
      
-html {
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 font-family: 'Roboto Condensed', sans-serif;
+background-image: url('/media/random.jpg');
+
+
 }
 
 
@@ -263,18 +277,6 @@ background: rgba(0, 0, 0, .5);
 
 
 
-body {
- background-image: url('/media/random.jpg');
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
-
- font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
- font-size: 14px;
- color:#000;
- margin: 0;
- padding: 0;
-}
 .swiper-container {
  width: 50%;
  padding-top: 100px;
