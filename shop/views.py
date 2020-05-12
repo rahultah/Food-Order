@@ -1,14 +1,45 @@
 from django.shortcuts import render, redirect,get_object_or_404
-
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from .models import Restaurant,Item,Menu,Order,orderItem
 from math import ceil
 from collections import Counter
+from .forms import CreateUserForm
+from django.forms import inlineformset_factory
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+
+
 
 
 def index(request):
      
     return render(request, 'shop/main.html')
+
+def loginpage(request):
+	if request.method == "POST":
+		username = request.POST.get('username')
+		password = request.POST.get("password")
+		user = authenticate(request,username = username, password = password)
+		if user is not None:
+			login(request,user)
+			return 	redirect("home")
+		else:
+			messages.info(request,'Username and password is incorrect')
+			return render(request, 'shop/login.html')			
+	return render(request, 'shop/login.html')
+
+def register(request):
+	form = CreateUserForm()
+	if request.method == 'POST':
+		form = CreateUserForm(request.POST)
+		if form.is_valid():
+			form.save()
+			
+
+
+
+	return render(request, 'shop/register.html',{'form':form})
 
 def restaurant(request):
     rest_obj = Restaurant.objects.all()

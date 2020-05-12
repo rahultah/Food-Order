@@ -1,0 +1,40 @@
+
+
+{% extends 'shop/a.html'%}
+
+
+{% load static %}
+
+{% block body %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/login.css' %}"/>
+
+
+
+    <!-- <h1>Login</h1>
+    <form action="" method="POST">
+        {%csrf_token%}
+
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" name="Create User">
+        {%for message in messages%}
+            <p id="messages">{{message}}</p>
+
+        {%endfor%}
+
+    </form> -->
+
+    <form class="box" action="" method="POST">
+        {%csrf_token%}
+
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" name="" value="Login">
+        {%for message in messages%}
+            <p id="messages" style="color:white;" style="font-weight: bold;">{{message}}</p>
+
+        {%endfor%}
+      </form>
+      
+{% endblock %}
