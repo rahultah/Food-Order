@@ -1,0 +1,262 @@
+{% extends 'shop/restextend.html'%}
+{% load static %}
+
+{% block body %}
+
+	
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>
+
+
+.container .table{
+   
+   overflow-x: auto !important;
+   width: 100% !important;	
+ }
+ .restcontainer .restname h3{
+    padding: 0px;
+    margin: 0px;
+  font-size: 20px;
+  line-height: 20px;
+/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+.restcontainer  h3{
+    padding: 0px;
+    margin: 0px;
+  font-size: 20px;
+  line-height: 20px;
+/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+.restcontainer .restname{
+    font-family: 'Roboto Condensed', sans-serif;
+    
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 20px;
+	}
+	.h3{
+    font-family: 'Roboto Condensed', sans-serif;
+    
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 20px;
+    }
+.main-hr {
+  width: 30%;
+  border: none;
+  border-top: 1px solid #c3c3c3;
+}
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #cdcdcd;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.2s ease-in-out;
+}
+.add-btn:hover {
+  width: 120px;
+}
+.add-btn::before,
+.add-btn::after {
+  transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  top: calc(50% - 2px);
+  background: red;
+}
+.add-btn::after {
+  right: 14px;
+  overflow: hidden;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.add-btn::before {
+  left: 14px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.icon-btn:focus {
+  outline: none;
+}
+.btn-txt {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.add-btn:hover::before,
+.add-btn:hover::after {
+  width: 4px;
+  border-radius: 2px;
+}
+.add-btn:hover .btn-txt {
+  opacity: 1;
+}
+.add-icon::after,
+.add-icon::before {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: calc(50% - 10px);
+  background: red;
+  overflow: hidden;
+}
+.add-icon::before {
+  left: 22px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.add-icon::after {
+  right: 22px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.add-btn:hover .add-icon::before {
+  left: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+.add-btn:hover .add-icon::after {
+  right: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+
+</style>
+
+
+	<br>
+	<div class="container">
+		<div class="restcontainer">
+			<div class="restname">
+				<br><br>
+				<h3>{{rname}}</h3>
+				</div>
+				<div class="restname">
+					<h3>Info : </b>{{rinfo|safe}}</h3>
+					</div>
+			<div class="restname">
+				<h3>Location: </b>{{rlocation}}</h3>
+			</div>
+			<p>			<br>
+			 <a class="text-success"><h3><b>Min Order:</b>&#x20b9;{{rmin}}</h3></a>
+		</font>
+		</p>
+	</div>
+	
+		<div class= "table">
+			<h3 class="text-danger"><font size="5"><strong>Menu</strong></font></h3>
+			<br>
+				<table align="center" class="table table-striped" >
+					<thead>
+						<th><h3>Item Name</h3></th>
+						<th><h3>Category</h3></th>
+						<th><h3>Price</h3></th>
+						<th><h3>Add</h3></th>
+					</thead>
+					{% for x in items %}
+					<tr>
+					<td><h3>{{x.0}}</h3></td>
+					<td><h3>{{x.1}}</h3></td>
+					<td><h3>&#x20b9; {{x.2}}</h3></td>
+					{% if x.4 == "Open" %}
+					{% if x.5 > 0 %}
+					<td>
+						<div style="text-align: center; margin-top:30px;">
+							<button class="icon-btn add-btn" onclick="
+							if(document.querySelector('#itemno{{x.3}}').innerHTML<{{x.5}}){
+								document.querySelector('#itemno{{x.3}}').innerHTML++;
+								pluscounter('{{x.3}}');
+								}">
+							  <div class="add-icon"></div>
+							  <div class="btn-txt">Add</div>
+							</button>
+						<h3><span id='itemno{{x.3}}'> 0 </span></h3>
+
+							<button class="icon-btn add-btn" onclick="if(document.querySelector('#itemno{{x.3}}').innerHTML>0){
+								document.querySelector('#itemno{{x.3}}').innerHTML--;
+								minuscounter('{{x.3}}');
+								}">  
+							  <div class="btn-txt">Remove</div>
+							</button>
+						   <div>
+					</td>
+					{% else %}
+					<td>
+						NA
+					</td>
+					{% endif %}
+					{% else %}
+					<td>
+						Closed
+					</td>
+					{% endif %}
+					</tr>
+					{% endfor %}
+				</tr>
+				</table>
+				<div class="button">
+			
+					<input type="button" class="btn btn-success btn-lg pull-right" onclick="storearray();" value="Checkout"/>
+			
+				</div>
+				
+		</div>
+		
+	</div>
+	
+	
+<br>
+<script type="text/javascript">
+	
+var cart = [];
+	function pluscounter(pk){
+		cart.push(pk);
+		console.log(cart);
+	};
+	function minuscounter(pk){
+		if (cart!=[]){
+			var removeindex = cart.indexOf(pk);
+			cart.splice(removeindex, 1);
+			}
+			console.log(cart);
+	};
+
+	function storearray(){
+		if(cart.length === 0)
+		{
+			alert('No items selected');
+			return false;
+		}
+		document.cookie = "cart="+cart+";Path=/";
+		document.cookie ="rest={{restid}};Path=/";
+		window.location = "/checkout/";
+	};
+</script>
+{% endblock %}
